@@ -1,0 +1,26 @@
+{%extends "user_base.html"%} {%load static%}{%load bootstrap4%} {%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-xm-3 col-sm-3 col-md-3 col-lg-3">
+            <img src="https://media.istockphoto.com/photos/white-passenger-bus-picture-id135327019?k=20&m=135327019&s=612x612&w=0&h=YJneXYFReSVuKSIFOy5wGIygeLeb1UquX4BWLk-MluI=" alt="">
+        </div>
+        <div class="col-xm-6 col-sm-6 col-md-6 col-lg-6 register">
+            <h3>Register as a traveller</h3>
+
+            <form action="" method="POST">
+                {% csrf_token %} {% for field in form %}
+                <div>
+                    <p>{{ field.label }}: {{field}}</p>
+
+                    {% for error in field.errors %}
+                    <small style="color: red">{{ error }}</small> {% endfor %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+        <div class="col-xm-3 col-sm-3 col-md-3 col-lg-3"></div>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,55 @@
+.home {
+    background-image: url('./../../static/Bus.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bus-search-form {
+    background-color: rgba(255, 255, 255, 0.309);
+    border: 0px;
+    box-shadow: 2px 2px 0px 0px solid lightgray;
+    border-radius: 5px;
+    padding: 2% 1% 2% 1%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.searchbus {
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.table-striped>tbody>tr:nth-child(2n+1)>td,
+.table-striped>tbody>tr:nth-child(2n+1)>th {
+    background-color: rgba(211, 211, 211, 0.808);
+}
+
+.register {
+    border: 1px solid darkblue;
+    box-shadow: 2px 2px 0px 0px lightgray;
+}
+
+.login {
+    float: right;
+    margin-right: 3%;
+    margin-top: 2;
+    clear: none;
+}
+
+.seat_table {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.seat {
+    background-color: #20396477;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 3px 5px 0px 0px;
+}
+
+td.btn {
+    margin: 1%;
+}

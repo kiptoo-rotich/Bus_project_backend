@@ -1,0 +1,77 @@
+{%extends "base.html"%} {% include 'main/includes/messages.html' %}{%load static%}{%load bootstrap4%} {%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2"></div>
+        <div class="col-xm-10 col-sm-10 col-md-10 col-lg-10">
+            <div class="mt-2 mb-4">
+                <h4 style="float: left;">The total number of drivers are <b>{{drivers.count}}</b>.</h4>
+                <form class="form-inline my-2 my-lg-0" style="float: right;">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search bus" aria-label="Search">
+                    <button class="btn btn-md btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+
+            <br>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Add Driver
+  </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Complete the form below to add driver.</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="post">
+                                {% csrf_token %} {% bootstrap_form form %}
+                                <br>
+                                <div class="form-group">
+                                    <center><input type="submit" class="btn btn-primary btn-md" value="Save" style="width:100%"></center>
+                                </div>
+
+                                <input type="hidden" name="next" value="{{next}}">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone number</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%if drivers %} {%for driver in drivers%}
+
+                    <tr>
+                        <td>{{driver.first_name}} {{driver.last_name}}</td>
+                        <td>{{driver.phone_number}}</td>
+                        <td>
+                            <a href="{%url 'editdriver' driver.id%}"><img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/24/000000/external-edit-interface-kiranshastry-lineal-color-kiranshastry.png" /></a>
+                        </td>
+                        <td>
+                            <a href="{%url 'deletedriver' driver.id%}"><img src="https://img.icons8.com/color/30/000000/delete-sign--v1.png" /></a>
+                        </td>
+                    </tr>
+                    {%endfor%} {%else%}
+                    <p>You have no drivers yet.</p>
+                    {%endif%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock%}

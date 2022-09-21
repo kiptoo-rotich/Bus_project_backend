@@ -1,0 +1,65 @@
+{%extends "user_base.html"%} {% include 'main/includes/messages.html' %}{%load static%}{%load bootstrap4%} {%block content%}
+<div id="home">
+    <div class="home">
+        <div class="dropdown login mt-2 mb-2">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Login
+        </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="accounts/login/"> <img src="https://img.icons8.com/color/25/000000/passenger.png" /> User
+                </a>
+                <a class="dropdown-item" href="driver/accounts/login"> <img src="https://img.icons8.com/color/25/000000/driver.png" /> Driver
+                </a>
+                <a class="dropdown-item" href="administrator/accounts/login"><img src="https://img.icons8.com/bubbles/25/000000/system-administrator-female.png" /> Admin</a>
+            </div>
+        </div>
+        <div class="row searchbus">
+            <div class="col-sm-8 col-md-8 col-lg-8"></div>
+            <div class="col-xm-12 col-sm-4 col-md-4 col-lg-4  bus-search-form">
+                <form action="" method="POST" class="form" id="form">
+                    {% csrf_token %}
+                    <div class="fieldWrapper">{% bootstrap_form form %}</div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-md submit" id="submit" value="Search bus" onclick="scrollDown()" style="background-color: #284b63;color:white;width: 100%;">
+                    </div>
+                    <input type="hidden" name="next" value="{{next}}">
+                </form>
+            </div>
+            <div class="col-md-6 col-lg-6"></div>
+        </div>
+    </div>
+
+    <div class="available_buses card-body text-center" style="background-color:#284b63;height:70px;padding-bottom:20px;">AVAILABLE BUSES</div>
+
+    <div class="container card" style="padding-top:20px;border:1px solid #284b63;">
+        <div class="card-body row" id="results scrollBottom">
+            {%if buses%}
+            <table id="booking_table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col">Bus type</th>
+                        <th class="col">Departure</th>
+                        <th class="col">Destination</th>
+                        <th class="col">Amount(sh)</th>
+                        <th class="col">Date(Departure)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for bus in buses%}
+                    <tr class="table_row">
+                        <td>{{bus.bus_company}}</td>
+                        <td>{{bus.source}}</td>
+                        <td>{{bus.destination}}</td>
+                        <td>sh.{{bus.fare}}</td>
+                        <td>{{bus.date}}</td>
+                        <td><a href="{%url 'booking' bus.id%}"><button class="btn btn-md book_button float-right" style="background-color: #284b63;color: #fff;">BOOK NOW</button></a>
+                        </td>
+                    </tr>
+                    {%endfor%}{%else%}
+                    <p class="text-center">No available buses</p>
+                </tbody>
+            </table>{%endif%}
+        </div>
+
+    </div>
+    {% endblock content %}

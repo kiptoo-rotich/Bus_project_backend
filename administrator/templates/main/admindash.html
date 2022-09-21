@@ -1,0 +1,48 @@
+{%extends "base.html"%} {% include 'main/includes/messages.html' %}{%load static%}{%load bootstrap4%} {%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2">
+
+        </div>
+        <div class="col-xm-10 col-sm-10 col-md-10 col-lg-10">
+            <div class="align-dash">
+                <a href="{%url 'users'%}" class="ancher">
+                    <div class="card card-color" style="width: 22rem; height: 15rem;">
+                        <div class="card-body card-center">
+                            <img src="https://img.icons8.com/color/58/000000/passenger.png" />
+                            <h2>Users</h2> <sup><span class="badge badge-pill badge-danger">{{login_details.count}}</span></sup>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{%url 'drivers'%}" class="ancher">
+                    <div class="card card-color" style="width: 22rem; height: 15rem;">
+                        <div class="card-body card-center">
+                            <img src="https://img.icons8.com/color/58/000000/driver.png" />
+                            <h2>Drivers</h2> <sup><span class="badge badge-pill badge-danger">{{drivers.count}}</span></sup>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="align-dash">
+                <div class="card card-color" style="width: 22rem; height: 15rem;">
+                    <div class="card-body card-center">
+                        <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-route-interface-kiranshastry-gradient-kiranshastry.png" />
+                        <h2>Routes</h2>
+                    </div>
+                </div>
+                <a href="{%url 'buses'%}" class="ancher">
+                    <div class="card card-color" style="width: 22rem; height: 15rem;">
+                        <div class="card-body card-center">
+                            <img src="https://img.icons8.com/external-icongeek26-flat-icongeek26/64/000000/external-bus-transportation-icongeek26-flat-icongeek26.png" />
+                            <h2>Buses</h2> <sup><span class="badge badge-pill badge-danger">{{buses.count}}</span></sup>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

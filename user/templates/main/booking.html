@@ -1,0 +1,106 @@
+{%extends "user_base.html"%}{%load static%}{%load bootstrap4%} {%block content%}
+<div class="">
+    <div class="row">
+        <div class="col-xm-12 col-sm-4 col-md-4 col-lg-4">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <center>
+                <h2>Front</h2>
+                <table class="seat">
+                    <tr class="seat_table text-center">
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>1</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>2</td>
+                        <td class="btn btn-lg btn-secondary"> </td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/44/000000/external-car-seat-car-parts-and-service-icongeek26-linear-colour-icongeek26.png" />
+                            <br><input type="checkbox" name="seat" disabled id="" value="4">Driver</td>
+                    </tr>
+                    <tr class="seat_table">
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>3</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>4</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>5</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>6</td>
+                    </tr>
+
+                    <tr class="seat_table">
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>7</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>8</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>9</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>10</td>
+                    </tr>
+                    <tr class="seat_table">
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>11</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>12</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>13</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>14</td>
+                    </tr>
+                    <tr class="seat_table">
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>15</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>16</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>17</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>18</td>
+                    </tr>
+                    <tr class="seat_table">
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>19</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>20</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>21</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>22</td>
+                    </tr>
+                    <tr class="seat_table">
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>23</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>24</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>25</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>26</td>
+                    </tr>
+                    <tr class="seat_table">
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>27</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>28</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>29</td>
+                        <td class="btn btn-lg btn-secondary"><img src="https://img.icons8.com/emoji/48/000000/seat.png" />
+                            <br>30</td>
+                    </tr>
+                </table>
+                <h2>Back</h2>
+            </center>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <form action="" method="POST" class="form">
+                {% csrf_token %}{%bootstrap_form form%}
+                <div class="form-group">
+                    <a href="{%url 'lipa_na_mpesa'%}"><input type="submit" class="btn btn-md submit" id="submit" value="Proceed to Book" style="background-color: #284b63;color:white;width: 100%;"></a>
+                </div>
+                <input type="hidden" name="next" value="{{next}}">
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
